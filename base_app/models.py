@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 # Create your models here.
 
 class Room(models.Model):
@@ -10,3 +11,7 @@ class Room(models.Model):
     
     def __str__(self):
         return self.name
+=======
+# Create your models here.test test hih test again
+
+>>>>>>> 5212ec57dbe86aa42727d6ad5f794457450b0de7
