@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Room
 
 
 rooms = [
@@ -24,15 +24,12 @@ rooms = [
     
 ]
 def home(request):
-    context = {'rooms': rooms}
+    room = Room.objects.all()
+    context = {'rooms': room}
     return render(request, 'base_app/home.html', context)
 
 def room(request,pk):
-    room = None
-    for r in rooms:
-        if r['id'] == int(pk):
-            room = r    
-            break   
+    room = Room.objects.get(id=pk)
     context = {'room': room}
     
     return render(request, 'base_app/room.html', context)
